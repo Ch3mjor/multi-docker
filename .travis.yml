@@ -13,8 +13,7 @@ after_success:
   - docker build -t ch3mjor/multi-nginx ./nginx
   - docker build -t ch3mjor/multi-server ./server
   - docker build -t ch3mjor/multi-worker ./worker
-  #Take those images and push them to docker hub, Login to docker CLI
-  #Log in to docker CLI
+
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ch3mjor/multi-client
   - docker push ch3mjor/multi-nginx
