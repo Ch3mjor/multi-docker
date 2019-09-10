@@ -15,7 +15,7 @@ after_success:
   - docker build -t ch3mjor/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push ch3mjor/multi-client
-  - docker push ch3mjor/multi-nginx
-  - docker push ch3mjor/multi-server
-  - docker push ch3mjor/multi-worker
+  - docker push ch3mjor/multi-client:latest
+  - docker push ch3mjor/multi-nginx:latest
+  - docker push ch3mjor/multi-server:latest
+  - docker push ch3mjor/multi-worker:latest
