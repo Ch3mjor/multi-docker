@@ -19,3 +19,17 @@ after_success:
   - docker push ch3mjor/multi-nginx:latest
   - docker push ch3mjor/multi-server:latest
   - docker push ch3mjor/multi-worker:latest
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-west-1-UR-BCKT-ID
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
+  
